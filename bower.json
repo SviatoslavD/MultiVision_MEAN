@@ -1,0 +1,22 @@
+{
+  "name": "MultiVision",
+  "version": "0.0.0",
+  "authors": [
+    "SviatoslavD <sviatoslav.denykevych@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "jquery": "~2.1.4",
+    "toastr": "~2.1.2"
+  }
+}
