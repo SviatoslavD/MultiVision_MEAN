@@ -39,7 +39,13 @@ app.use(express.static(__dirname + '/public'));
 
 // configure mongodb
 // connect ot mongo db and create db - "multivision"
-mongoose.connect('mongodb://localhost/multivision');
+// depend on env we will use different db
+if(env === 'development') {
+    mongoose.connect('mongodb://localhost/multivision');
+} else {
+    // use mongoLab mongodb
+    mongoose.connect('mongodb://master:multivision@dbh63.mongolab.com:27637/multivision');
+};
 // var for access to db, listening events and other...
 var db = mongoose.connection;
 //listening events on db
@@ -67,7 +73,7 @@ app.get('*', function (req, res) {
     });
 });
 
-var port = 3030;
+var port = process.env.PORT || 3030;
 app.listen(port);
 console.log('Listening on port' + port + '...');
 
